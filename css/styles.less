@@ -1,0 +1,114 @@
+// Grid variables-----------------------------------
+
+@import 'grid.less';
+
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+@total-width: 100%; 
+
+// Media Queries-----------------------------------
+
+@media (max-device-width: 960px) {
+   article {
+      .column(12);
+   }
+   sidebar {
+      .column(12);
+   }
+}
+
+// Color variables---------------------------------
+
+@black: #0f0f0f;
+@white: #efefef;
+@gray: #5a5b5d;
+@blue: #8cc6ec;
+
+// Type imports------------------------------------
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../type/League_Gothic-webfont.eot');
+    src: url('../type/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../type/League_Gothic-webfont.woff') format('woff'),
+         url('../type/League_Gothic-webfont.ttf') format('truetype'),
+         url('../type/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'AnonymousProRegular';
+    src: url('../type/Anonymous_Pro-webfont.eot');
+    src: url('../type/Anonymous_Pro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../type/Anonymous_Pro-webfont.woff') format('woff'),
+         url('../type/Anonymous_Pro-webfont.ttf') format('truetype'),
+         url('../type/Anonymous_Pro-webfont.svg#AnonymousProRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// Type mixins------------------------------------
+
+.heading {
+	font-family: 'AnonymousProRegular', Monaco, 'Lucida Console', sans-serif;
+}
+
+.copy {
+	font-family: 'LeagueGothicRegular', Arial, sans-serif;
+	font-size: 1.4em;
+}
+
+// Styling mixins--------------------------------
+
+.r_corner {
+	border-radius: 10px;
+}
+
+.spacing {
+	margin: 1em;
+}
+
+// Page layout and styling-----------------------
+
+body {
+	background: @black;
+}
+
+header {
+	.column(12);
+	background: @white;
+} 
+
+h1 {
+	.heading;
+	.spacing;
+}
+
+h2 {
+	font-size: 1.6em;
+	font-weight: normal;
+	margin-bottom: 0;
+	margin-left: .5em;
+}
+
+article {
+	.column(8);
+	.copy;
+	background: @gray;
+	color: @white;
+}
+
+p {
+	.spacing;
+}
+
+sidebar {
+	.column(4);
+	.copy;
+	background: @blue;
+}
