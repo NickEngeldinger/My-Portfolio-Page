@@ -8,23 +8,13 @@
 
 @total-width: 100%; 
 
-// Media Queries-----------------------------------
-
-@media (max-device-width: 960px) {
-   article {
-      .column(12);
-   }
-   sidebar {
-      .column(12);
-   }
-}
-
 // Color variables---------------------------------
 
 @black: #0f0f0f;
 @white: #efefef;
 @gray: #5a5b5d;
 @blue: #8cc6ec;
+@light_blue: #c6e3f6;
 
 // Type imports------------------------------------
 
@@ -65,8 +55,9 @@
 
 // Styling mixins--------------------------------
 
-.r_corner {
-	border-radius: 10px;
+.bottom_corner {
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
 .spacing {
@@ -77,11 +68,13 @@
 
 body {
 	background: @black;
+	margin: 0;
 }
 
 header {
 	.column(12);
 	background: @white;
+		
 } 
 
 h1 {
@@ -89,18 +82,66 @@ h1 {
 	.spacing;
 }
 
+.highlight {
+    color: @black;
+        -webkit-transition: color 0.5s;
+        -moz-transition: color 0.5s;
+        -o-transition: color 0.5s;
+}
+
+.highlight:hover {
+	color: @blue;
+}
+
 h2 {
-	font-size: 1.6em;
+	font-size: 2em;
 	font-weight: normal;
 	margin-bottom: 0;
 	margin-left: .5em;
+	text-shadow: 0 0 1px @white;
+}
+
+.nav {
+	float: right;
+	list-style-type: none;
+	margin: -3em 2em 0 0;
+}
+
+.nav li {
+	color: @blue;
+	float: left;
+	padding-right: 15px;
+}
+
+.nav li a {
+	.heading;
+	color: @blue;
+	font-weight: bold;
+	font-size: 24px;
+	text-decoration: none;
+}
+
+.nav li a.active {
+	text-decoration: underline;
+}
+
+.nav li:hover {
+	-webkit-transform: rotate(-15deg); 
+	-moz-transform: rotate(-15deg);
+}
+
+aside {
+	.column(1);
 }
 
 article {
-	.column(8);
+	.bottom_corner;
+	.column(7);
 	.copy;
 	background: @gray;
 	color: @white;
+	letter-spacing: .05em;
+	text-shadow: 1px 1px 0 @black;
 }
 
 p {
@@ -108,7 +149,23 @@ p {
 }
 
 sidebar {
-	.column(4);
+	border-radius: 0 0 200px 50px;
+	.column(3);
 	.copy;
 	background: @blue;
+}
+
+// Media Queries-----------------------------------
+
+@media (max-width: 480px) {
+	article {
+        	.column(12);
+		border-radius: 0;
+	}
+  	sidebar {
+       		.column(12);
+        }
+        h1 {
+       		font-size: 150%;
+        }
 }
