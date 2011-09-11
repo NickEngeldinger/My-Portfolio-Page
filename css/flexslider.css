@@ -66,5 +66,54 @@
         	bottom: 0;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
         width: 96%;
+}
 
+.flex-caption a {
+	color: inherit;
+}
+
+.flex-direction-nav li a {
+    background: none repeat scroll 0 0 #C3C3C3;
+    border-radius: 5px 5px 5px 5px;
+    border: solid 1px #e6e6e6;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    height: 52px;
+    margin: -13px 0 0;
+    position: absolute;
+    text-decoration: none;
+    text-indent: 20px;
+    text-shadow: 0px -1px 0px #fff;
+    top: 50%;
+    width: 52px;
+}
+
+.flex-direction-nav li a:active {
+	color: #000;	
+	text-shadow: none;
+        margin-top: -12px;
+        color: #000;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); 
+}
+
+.flex-direction-nav li a.next:active {
+	background-position: -52px 0;
+	right: -20px;
+}
+
+.flex-direction-nav li a.prev:active {
+	background-position: 0 0; 
+	left: -19px;
+
+}
+
+.flexslider {
+    background: none repeat scroll 0 0 #c3c3c3;
+    border: 6px solid #C3C3C3;
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
 }
